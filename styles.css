@@ -31,7 +31,7 @@
     canvas.box {
       background-color: black;
       border: 0px none;
-      height: calc(100vh - constant(safe-area-inset-top));
+      height: 100vh;
       image-rendering: pixelated;
     }
 
