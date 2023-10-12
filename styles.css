@@ -49,7 +49,7 @@
       align-items: center;
       background-color: var(--bg-color-light);
       color: var(--text-color-light);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Monospace', sans-serif;
       visibility: visible;
       z-index: 10;
     }

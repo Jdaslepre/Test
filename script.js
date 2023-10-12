@@ -99,7 +99,8 @@ function handleFileUpload(event) {
 
         FS.writeFile('/Data.bin', new Uint8Array(fileData));
         fileUploadButton.style.display = "none";
-        Module[_RSDKInitialize()];
+
+        Module._RSDKInitialize();
       };
       reader.readAsArrayBuffer(selectedFile);
     }
