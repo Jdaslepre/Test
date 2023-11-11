@@ -5,6 +5,9 @@
     --mica-alt_tint: #DADADA;
     --mica-alt_l2_op: 0.5;
 
+    --shellAcrylic-Layer1-BG: rgba(243, 243, 243, 0);
+    --shellAcrylic-Layer2-BG: rgba(243, 243, 243, 0.90);
+
     /* yes, this will be fixed */
     --bg-color-light: #F9F9F9;
     --bg-color-dark: #191919;
@@ -26,6 +29,9 @@
     --mica-alt_tint: #0A0A0A;
     --mica-alt_l2_op: 0;
 
+    --shellAcrylic-Layer1-BG: rgba(32, 32, 32, 0.50);
+    --shellAcrylic-Layer2-BG: rgba(32, 32, 32, 0.96);
+
     /* yes, this will be fixed */
     --bg-color-light: #F9F9F9;
     --bg-color-dark: #191919;
@@ -46,8 +52,7 @@ body {
   color: var(--text-color-light);
   margin: 0;
   padding: 0;
-  overflow: hi
-  dden;
+  overflow: hidden;
 }
 
 /* global stuff */
@@ -113,11 +118,11 @@ canvas.box {
 }
 
 /* 
-Mica alt layers, taken from WinUI 3 on figma
+Mica alt, taken from WinUI 3 on figma
 
 the colors don't come from the background, but... I mean
 should be possible, right? 👀
- */
+*/
 
 .mica-alt_layer {
   width: 100%;
@@ -136,6 +141,36 @@ should be possible, right? 👀
   mix-blend-mode: color;
   position: absolute;
   opacity: var(--mica-alt_l2_op);
+}
+
+/* Shell acrylic, again - taken from figma */
+
+.shell-acrylic_noise {
+  width: 100%;
+  height: 100%;
+  background-image: url("/Assets/NoiseAsset.png");
+  opacity: 0.02;
+  position: absolute;
+  z-index: 1;
+}
+
+.shell-acrylic_layer {
+  width: 100%;
+  height: 100%;
+  background: var(--shellAcrylic-Layer1-BG);
+  mix-blend-mode: color;
+  position: absolute;
+  backdrop-filter: blur(30px);
+
+}
+
+.shell-acrylic_layer2 {
+  width: 100%;
+  height: 100%;
+  background: var(--shellAcrylic-Layer2-BG);
+  mix-blend-mode: luminosity;
+  position: absolute;
+
 }
 
 /* This is NOT supposed to be here at all, but whatever, output: <textarea class="emscripten" id="output" rows="8"></textarea> */

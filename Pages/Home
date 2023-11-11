@@ -1,0 +1,61 @@
+<div style="gap: 10px; display: flex; flex-direction: column;">
+
+    <style>
+
+        .header-box {
+            background-color: #231F20;
+            box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.12); 
+            border-radius: 8px;
+            height: 78px;
+            padding-left: 24px;
+            padding-right: 24px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .button-content {
+            display: inline-flex;
+            gap: 16px;
+            text-align: center;
+            align-items: center;
+        }
+
+    </style>
+
+    <!-- Engine Library  -->
+
+    <header>
+        <h1 class="text-block type-subtitle svelte-zxj483" style="color: var(--fds-text-primary);">Engine Library</h1> 
+    </header>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+
+        <button class="icon-button svelte-1iys5lx" style="width: 168px; height: 56px;" onclick="launchEngine('2')"> 
+            <div class="button-content">
+                <img src="Assets/RSDKGeneric.png" width="34px" style="margin: auto;"></img>
+                <span class="text-block type-body-strong svelte-zxj483">RSDKv2</span>
+            </div>
+        </button>
+      
+    </div>
+
+    <!-- Tools  -->
+
+    <header>
+        <h1 class="text-block type-subtitle svelte-zxj483" style="color: var(--fds-text-primary);">Tools</h1> 
+    </header>
+
+    <div>
+
+        <button class="icon-button svelte-1iys5lx" style="width: 168px; height: 56px;" onclick="OpenTab('Pages/Files/index.html')"> 
+            <div class="button-content">
+                <img src="Assets/FluentIcons/Files.svg" width="34px" style="margin: auto;"></img>
+                <span class="text-block type-body-strong svelte-zxj483">Files</span>
+            </div>
+        </button>
+
+    </div>
+
+</div>

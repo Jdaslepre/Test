@@ -1,0 +1,95 @@
+    :root {
+      --bg-color-light: #F9F9F9;
+      --bg-color-dark: #191919;
+
+      --text-color-light: #000000;
+      --text-color-dark: #FFFFFF;
+
+      --accent-color-light: #005FB8;
+      --accent-color-dark: #60CDFF;
+
+      --rail-color-light: #646464;
+      --rail-color-dark: #9A9A9A;
+    }
+
+    html, body {
+      background-color: black;
+      color: var(--text-color-light);
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .box { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
+
+    textarea.box {
+      font-family: monospace;
+      width: 80%;
+    }
+
+    /* The canvas *must not* have any border or padding, or mouse coords will be wrong */
+    canvas.box {
+      background-color: black;
+      border: 0px none;
+      height: 100vh;
+      image-rendering: pixelated;
+    }
+
+    /* This is NOT supposed to be here at all, but whatever, output: <textarea class="emscripten" id="output" rows="8"></textarea> */
+
+    .loading-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      font-family: 'Monospace', sans-serif;
+      visibility: visible;
+      z-index: 10;
+    }
+
+    .progress-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      width: 50%;
+      height: 100px;
+    }
+    
+    .rail {
+      background-color: var(--rail-color-light);
+      margin: 1px;
+      height: 1px;
+      flex-grow: 1;
+      border-radius: 1px;
+    }
+    
+    .track {
+      background-color: var(--accent-color-light);
+      position: absolute;
+      opacity: 1;
+      border-radius: 999px;
+      height: 3px;
+      transition: width 0.3s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .loading-screen {
+        background-color: var(--bg-color-dark);
+        color: var(--text-color-dark);
+
+      }
+      .track {
+        background-color: var(--accent-color-dark);
+      }
+      .rail {
+        background-color: var(--rail-color-dark);
+      }
+    }

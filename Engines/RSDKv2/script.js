@@ -1,5 +1,6 @@
 var statusElement = document.getElementById('status');
 var loadingElement = document.getElementById('loading');
+var progressContainer = document.getElementById('pcontainer');
 var progressTrack = document.getElementById('ptrack');
 const fileUploadButton = document.getElementById('uploadFile');
 
@@ -18,7 +19,12 @@ var Module = {
     };
   })(),
   onRuntimeInitialized: function () {
+    loadingElement.style.justifyContent = "center";
+    progressContainer.style.display = "none";
+    uploadFile.style.display = "block";
+
     loadingElement.style.display = "none";
+    FS_Initialize();
   },
   
   canvas: (() => {
@@ -92,14 +98,11 @@ function handleFileUpload(event) {
   fileInput.addEventListener('change', (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-
       const reader = new FileReader();
       reader.onload = (event) => {
         const fileData = event.target.result;
-
-        FS.writeFile('/Data.bin', new Uint8Array(fileData));
-        fileUploadButton.style.display = "none";
-
+        loadingElement.style.display = "none";
+        FS.writeFile('/FileSystem/RSDKv2/Data.bin', new Uint8Array(fileData));
         Module._RSDKInitialize();
       };
       reader.readAsArrayBuffer(selectedFile);
