@@ -1,11 +1,11 @@
-function createDialog(title, message, confirmLabel, closeLabel, confirmStyle, closeStyle, confirmActionFunc, closeActionFunc, target) {
+function createDialog(title, message, confirmLabel, closeLabel, confirmStyle, closeStyle, confirmActionFunc, closeActionFunc, target) { // mid function ngl
     const smokeContainer = document.createElement('div');
     smokeContainer.className = 'content-dialog-smoke svelte-1szmc6y darken';
     smokeContainer.style.opacity = '0';
     smokeContainer.style.transition = 'opacity 0.083s linear';
     smokeContainer.style.position = 'absolute';
 
-    target.appendChild(smokeContainer); // document.body.appendChild(smokeContainer);
+    target.appendChild(smokeContainer);
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'content-dialog size-standard svelte-1szmc6y';
@@ -61,3 +61,15 @@ function createDialog(title, message, confirmLabel, closeLabel, confirmStyle, cl
         }
     });
 }
+
+
+function RS_getSetting(key) {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
+}
+
+function RS_saveSetting(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+

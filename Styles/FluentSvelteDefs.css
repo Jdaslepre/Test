@@ -65,8 +65,8 @@
 /* Light Theme Colors */
 @media (prefers-color-scheme: light) {
 	:root {
-		/* Thing that Jd added */
 		--bloom-mica-color: #F0F5F9;
+		--bloom-micaalt-color: #CFDCEC;
 
 		/* Text */
 		--fds-text-primary: hsla(0, 0%, 0%, 89.56%);
@@ -236,8 +236,8 @@
 /* Dark Theme Colors */
 @media (prefers-color-scheme: dark) {
 	:root {
-		/* Thing that Jd added */
 		--bloom-mica-color: #1A202C;
+		--bloom-micaalt-color: #000A24;
 
 		/* Text */
 		--fds-text-primary: hsla(0, 0%, 100%, 100%);

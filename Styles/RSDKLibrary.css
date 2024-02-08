@@ -1,12 +1,6 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --basic-bg-color: #F9F9F9;
-
-    --mica-alt_tint: #DADADA;
-    --mica-alt_l2_op: 0.5;
-
-    --shellAcrylic-Layer1-BG: rgba(243, 243, 243, 0);
-    --shellAcrylic-Layer2-BG: rgba(243, 243, 243, 0.90);
+    --basic-bg-color: #FFFFFF;
 
     /* yes, this will be fixed */
     --bg-color-light: #F9F9F9;
@@ -26,11 +20,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --basic-bg-color: #191919;
-    --mica-alt_tint: #0A0A0A;
-    --mica-alt_l2_op: 0;
-
-    --shellAcrylic-Layer1-BG: rgba(32, 32, 32, 0.50);
-    --shellAcrylic-Layer2-BG: rgba(32, 32, 32, 0.96);
 
     /* yes, this will be fixed */
     --bg-color-light: #F9F9F9;
@@ -49,6 +38,7 @@
 
 html,
 body {
+  background-color: #000000;
   color: var(--text-color-light);
   margin: 0;
   padding: 0;
@@ -73,27 +63,28 @@ body {
   position: absolute;
   display: flex;
   justify-self: center;
+  justify-content: center;
   align-self: center;
   margin-top: 264px;
   width: 50%;
 }
 
-.rail {
-  background-color: var(--fds-control-strong-stroke-default);
-  margin: 1px;
-  height: 1px;
-  flex-grow: 1;
-  border-radius: 1px;
-}
+.seperator_h {
+	background-color: var(--fds-divider-stroke-default);
+        height: 1px;
+        width: 100%;
 
-.track {
-  background-color: var(--fds-accent-default);
-  position: absolute;
-  opacity: 1;
-  border-radius: 999px;
-  height: 3px;
-  transition: width 0.3s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
-}
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .TitleBar {
+      height: 32px;
+      padding-left: 16px;
+      gap: 12px;
+      display: flex;
+      align-items: center;
+    }
 
 /* old, sort */
 
@@ -113,97 +104,10 @@ textarea.box {
 canvas.box {
   background-color: black;
   border: 0px none;
+  width: 100vw;
   height: 100vh;
+  object-fit: contain;
   image-rendering: pixelated;
 }
 
-/* 
-Mica alt, taken from WinUI 3 on figma
-
-the colors don't come from the background, but... I mean
-should be possible, right? 👀
-*/
-
-.mica-alt_layer {
-  width: 100%;
-  height: 100%;
-  background: var(--mica-alt_tint);
-  mix-blend-mode: luminosity;
-  position: absolute;
-  backdrop-filter: blur(120px);
-
-}
-
-.mica-alt_layer2 {
-  width: 100%;
-  height: 100%;
-  background: var(--mica-alt_tint);
-  mix-blend-mode: color;
-  position: absolute;
-  opacity: var(--mica-alt_l2_op);
-}
-
-/* Shell acrylic, again - taken from figma */
-
-.shell-acrylic_noise {
-  width: 100%;
-  height: 100%;
-  background-image: url("/Assets/NoiseAsset.png");
-  opacity: 0.02;
-  position: absolute;
-  z-index: 1;
-}
-
-.shell-acrylic_layer {
-  width: 100%;
-  height: 100%;
-  background: var(--shellAcrylic-Layer1-BG);
-  mix-blend-mode: color;
-  position: absolute;
-  backdrop-filter: blur(30px);
-
-}
-
-.shell-acrylic_layer2 {
-  width: 100%;
-  height: 100%;
-  background: var(--shellAcrylic-Layer2-BG);
-  mix-blend-mode: luminosity;
-  position: absolute;
-
-}
-
 /* This is NOT supposed to be here at all, but whatever, output: <textarea class="emscripten" id="output" rows="8"></textarea> */
-
-.loading-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
-  font-family: 'Monospace', sans-serif;
-  visibility: visible;
-  z-index: 10;
-}
-
-@media (prefers-color-scheme: dark) {
-  .loading-screen {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-
-  }
-
-  .track {
-    background-color: var(--accent-color-dark);
-  }
-
-  .rail {
-    background-color: var(--rail-color-dark);
-  }
-}

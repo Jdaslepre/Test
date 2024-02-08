@@ -1,144 +1,147 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>IndexedDB Testing</title>
-    <link rel="icon" href="Assets/RSDK-Library.svg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="theme.css">
-    <link rel="stylesheet" type="text/css" href="huh.css">
-    <style>
 
-      html, body {
-        height: 100%;
-        margin: 0;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="theme-color">
+  <title>RSDK-Library</title>
+  <link href=/manifest.webmanifest rel=manifest>
+  <link rel="icon" href="Assets/RSDK-Library.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="Styles/FluentSvelteDefs.css">
+  <link rel="stylesheet" type="text/css" href="Styles/FluentSvelteControls.css">
+  <link rel="stylesheet" type="text/css" href="Styles/RSDKLibrary.css">
+  
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
 
-      body {
-        display: flex;
-        flex-direction: column;
-      }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
 
-      body.fade-out {
-          background-color: black;
-          opacity: 0;
-          transition: background-color 0.3s, opacity 0.3s;
-      }
+    .container {
+      flex: 1;
+      display: flex;
+      background-color: var(--bloom-mica-color);
+    }
 
-      .container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--bloom-mica-color);
-      }
+    .navigationColumn {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .navigationColumn {
-        padding-left: 4px;
-        gap: 4px;
-        display: inline-flex;
-        align-items: center;
-      }
+    .contentColumn {
+      flex: 1;
+      border-left: 1px solid var(--fds-surface-stroke-flyout);
+      background-color: var(--fds-layer-background-default);
+      padding-top: 22px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  </style>
 
-      .contentColumn {
-        flex: 1;
-        border-top: 1px solid var(--fds-surface-stroke-flyout);
-        background-color: var(--fds-layer-background-default);
-        padding-top: 21px;
-        padding-left: 24px;
-        padding-right: 24px;
-      }
 
-      /* "Change" some fluent svelte things without actually modifying the styles */
+  </style>
+</head>
 
-      .list-item.svelte-1ye4o7x {
-        align-items: center;
-        background-color: var(--fds-subtle-fill-transparent);
-        block-size: 34px;
-        border-radius: var(--fds-control-corner-radius);
-        box-sizing: border-box;
-        color: var(--fds-text-primary);
-        cursor: default;
-        display: flex;
-        flex: 0 0 auto;
-        inline-size: calc(100% - 10px);
-        margin: 3px 0px;
-        outline: none;
-        padding-inline:12px;
-        position: relative;
-        text-decoration: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+<body id="htmlbody">
 
-      .list-item.svelte-1ye4o7x>svg {
-        fill: currentColor;
-        -webkit-margin-end: 10px;
-        block-size: auto;
-        inline-size: 16px;
-        margin-inline-end: 10px;
-      }
+  <div id="app-root" class="container">
 
-      .list-item.svelte-1ye4o7x:before {
-        background-color: var(--fds-accent-default);
-        inline-size: 16px;
-        border-radius: 3px;
-        content: "";
-        block-size: 3px;
-        inset-inline-start: 0;
-        opacity: 0;
-        position: absolute;
-        transform: scaleX(0);
-        transition: transform var(--fds-control-fast-duration) var(--fds-control-fast-out-slow-in-easing)
-      }
+    <div class="navigationColumn">
 
-      .list-item.selected.svelte-1ye4o7x:before {
-        opacity: 1;
-        transform: scaleX(1);
-        position: absolute;
-        top: calc(100% - 3px);
-        left: 50%;
-      }
+      <!-- Title bar/Drag region -->
 
-      .list-item.svelte-1ye4o7x:active:before {
-          transform: scaleX(.625)
-      }
+      <div class="TitleBar" style="display:flex; position: absolute; width: 100%; -webkit-app-region: drag;">
 
-      /*  */
-        
-    </style>
-  </head>
-
-  <body id="htmlbody">
-
-    
-
-      <div class="container">
-          <div class="navigationColumn">
-
-            <button class="icon-button svelte-1iys5lx" style="width: 54px; height: 34px;">
-                <img src="Assets/RSDK-Library.svg" style="inline-size: 20px;"/>
-            </button>
-
-            <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item selected svelte-1ye4o7x" role="listitem" type="navigation" style="width: max-content; justify-content: center; display: inline-flex;">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.31299 1.26164C7.69849 0.897163 8.30151 0.897163 8.68701 1.26164L13.5305 5.84098C13.8302 6.12431 14 6.51853 14 6.93094V12.5002C14 13.3286 13.3284 14.0002 12.5 14.0002H10.5C9.67157 14.0002 9 13.3286 9 12.5002V10.0002C9 9.72407 8.77614 9.50021 8.5 9.50021H7.5C7.22386 9.50021 7 9.72407 7 10.0002V12.5002C7 13.3286 6.32843 14.0002 5.5 14.0002H3.5C2.67157 14.0002 2 13.3286 2 12.5002V6.93094C2 6.51853 2.1698 6.12431 2.46948 5.84098L7.31299 1.26164ZM8 1.98828L3.15649 6.56762C3.0566 6.66207 3 6.79347 3 6.93094V12.5002C3 12.7763 3.22386 13.0002 3.5 13.0002H5.5C5.77614 13.0002 6 12.7763 6 12.5002V10.0002C6 9.17179 6.67157 8.50022 7.5 8.50022H8.5C9.32843 8.50022 10 9.17179 10 10.0002V12.5002C10 12.7763 10.2239 13.0002 10.5 13.0002H12.5C12.7761 13.0002 13 12.7763 13 12.5002V6.93094C13 6.79347 12.9434 6.66207 12.8435 6.56762L8 1.98828Z" fill="currentColor"/>
-              </svg>  
-              <span class="text-block type-body svelte-zxj483">Home</span>
-            </a>
-
-          </div>
-
-          <div id="contentColumn" class="contentColumn"></div>
-          
-          <div>
-
-          </div>
+        <img src="/Assets/RSDK-Library.svg" style="inline-size: 16px;" />
+        <span class="text-block type-caption svelte-zxj483" style="color: var(--fds-text-primary)">RSDK-Library
+          Launcher</span>
 
       </div>
 
-      <script src="implementation.js"></script>
+      <!-- Make room for the titlebar since its position is absolute -->
+      <div style="height: 32px;"></div>
 
-  </body>
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item selected svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.31299 1.26164C7.69849 0.897163 8.30151 0.897163 8.68701 1.26164L13.5305 5.84098C13.8302 6.12431 14 6.51853 14 6.93094V12.5002C14 13.3286 13.3284 14.0002 12.5 14.0002H10.5C9.67157 14.0002 9 13.3286 9 12.5002V10.0002C9 9.72407 8.77614 9.50021 8.5 9.50021H7.5C7.22386 9.50021 7 9.72407 7 10.0002V12.5002C7 13.3286 6.32843 14.0002 5.5 14.0002H3.5C2.67157 14.0002 2 13.3286 2 12.5002V6.93094C2 6.51853 2.1698 6.12431 2.46948 5.84098L7.31299 1.26164ZM8 1.98828L3.15649 6.56762C3.0566 6.66207 3 6.79347 3 6.93094V12.5002C3 12.7763 3.22386 13.0002 3.5 13.0002H5.5C5.77614 13.0002 6 12.7763 6 12.5002V10.0002C6 9.17179 6.67157 8.50022 7.5 8.50022H8.5C9.32843 8.50022 10 9.17179 10 10.0002V12.5002C10 12.7763 10.2239 13.0002 10.5 13.0002H12.5C12.7761 13.0002 13 12.7763 13 12.5002V6.93094C13 6.79347 12.9434 6.66207 12.8435 6.56762L8 1.98828Z"
+            fill="currentColor" />
+        </svg>
+        <span class="text-block type-body svelte-zxj483">Home</span>
+      </a>
+
+      <div style="display: flex; justify-content: center;">
+        <div class="seperator_h"></div>
+      </div>
+
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <img src="Assets/RSDKGeneric.png" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">RSDKv2</span>
+      </a>
+
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <img src="Assets/RSDKv3.png" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">RSDKv3</span>
+      </a>
+
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <img src="Assets/RSDKv4.png" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">RSDKv4</span>
+      </a>
+
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <img src="Assets/RSDKv5.png" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">RSDKv5</span>
+      </a>
+
+      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation">
+        <img src="Assets/RSDKv5U.png" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">RSDKv5U</span>
+      </a>
+
+      <div style="display: flex; justify-content: center;">
+        <div class="seperator_h"></div>
+      </div>
+
+      <a href="Pages/Files/Files.html" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x"
+        role="listitem" type="navigation">
+        <img src="Assets/FluentIcons/Files.svg" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">File Explorer</span>
+        <img src="Assets/FluentIcons/Foward.svg" width="16px"
+          style="margin-left: auto; width: 12px;height: 12px; opacity: 0.7;">
+      </a>
+
+      <a id="Pages/Settings" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+        type="navigation" style="margin-top: auto; margin-bottom: 6px;">
+        <img src="Assets/FluentIcons/Settings.svg" width="16px" style="margin-right: 16px;"></img>
+        <span class="text-block type-body svelte-zxj483">Settings</span>
+      </a>
+
+    </div>
+
+    <div id="contentColumn" class="contentColumn">
+
+    </div>
+
+  </div>
+
+  <script src="implementation.js"></script>
+  <script src="Scripts/Shared.js"></script>
+
+</body>
+
 </html>

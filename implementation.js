@@ -4,29 +4,90 @@
 
 loadPage('Pages/Home');
 
-const navContent = document.getElementById('contentColumn');
+// Setup theme detection, literally only for the titlebar
+// PWA stuff might not work that well on any OS with 
+// left-aligned window controls
+function updTitlebarTheme() {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)');
+  
+    function xtwitter(event) {
+      if (event.matches) 
+        document.querySelector("meta[name=theme-color]").setAttribute('content', "#242831");
+      else 
+        document.querySelector("meta[name=theme-color]").setAttribute('content', "#F8FAFC");
+    }
+  
+    isDark.addListener(xtwitter);
+    xtwitter(isDark);
+  }
+  
+  updTitlebarTheme();
+  
+
+
+
+const navContent = document.getElementById('contentColumn').firstElementChild;
 
 // Handles the navigation with item selection & page loading
-const listItems = document.querySelectorAll('.list-item[type="navigation"]');      
-    listItems.forEach(item => {
-    item.addEventListener('click', () => {
-      listItems.forEach(item => item.classList.remove('selected'));
-        item.classList.add('selected');
-        const targetURL = item.getAttribute('id');
-        loadPage(targetURL);
-    });
+const listItems = document.querySelectorAll('.list-item[type="navigation"]');
+listItems.forEach(item => {
+    if (item.id) {
+        item.addEventListener('click', () => {
+            listItems.forEach(item => item.classList.remove('selected'));
+            item.classList.add('selected');
+            const targetURL = item.getAttribute('id');
+            loadPage(targetURL);
+        });
+    }
 });
+
+function themeWindow(bgColor) {
+    document.querySelector("meta[name=theme-color]").setAttribute('content', bgColor);
+  }
 
 // Loads a page into the content column
 function loadPage(url) {
-    fetch(url) .then(response => response.text()) .then(data => {
+    fetch(url).then(response => response.text()).then(data => {
         contentColumn.innerHTML = data;
     });
 }
 
+// The most functional function of all time
 function OpenTab(url) {
     window.open(url, '_blank');
 }
+
+// the experimenting
+
+function landleLaunch(id) {
+    var element = document.getElementById(`${id}-image`);
+    var txtElement = document.getElementById(`${id}-text`);
+
+    var transition = 'cubic-bezier(1, 0, 0, .90)';
+
+    element.style.transition = `width 0.600s cubic-bezier(0.68, -1, 0, 2), transform 0.167s cubic-bezier(0, 1, 0, 1)`
+    txtElement.style.transition = 'opacity 0.083s linear'
+    txtElement.style.opacity = 0;
+
+    // Get the current position of the element
+    var rect = element.getBoundingClientRect();
+    var currentX = rect.left;
+    var currentY = rect.top;
+
+    // Calculate the offset needed to move the element to the center of the document
+    var offsetX = window.innerWidth / 2 - currentX - rect.width / 2;
+    var offsetY = window.innerHeight / 2 - currentY - rect.height / 2;
+
+    // Apply the new position using the CSS transform property
+    element.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
+    element.style.width = '84px';
+    element.style.height = 'auto';
+}
+
+
+
+
+
 
 // Well?
 function createDialog(title, message, confirmLabel, closeLabel, confirmActionFunc, closeActionFunc) {
@@ -90,24 +151,3 @@ function createDialog(title, message, confirmLabel, closeLabel, confirmActionFun
         }
     });
 }
-
-
-// Launches an engine depending on what was passed through the function
-// launchEngine('3') - RSDKv(version), which would be RSDKv3
-function launchEngine(version) {
-  document.body.classList.add('fade-out');
-
-  // Wait for the fade
-  setTimeout(function () {
-      location.href = `Engines/RSDKv${version}/index.html`;
-  }, 300);
-}
-
-// ----------------------------------
-// huh.
-// well, this seems to do something
-// ----------------------------------
-
-var Module = {
-
-};

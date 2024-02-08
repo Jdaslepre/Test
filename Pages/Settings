@@ -1,0 +1,49 @@
+<div style="gap: 16px; display: flex; flex-direction: column;">
+
+    <style>
+        .contentHolder > div {
+            margin-bottom: 4px;
+        }
+    </style>
+    
+    <header>
+        <h1 class="text-block type-title-large svelte-zxj483" style="color: var(--fds-text-primary);">Settings</h1> 
+    </header>
+    
+    <div class="contentHolder">
+    
+        <div class="expander direction-down svelte-1p16tfx" role="region">
+            <h>
+                <div role="button" id="fds-expander-header-mbdec66fe8dcfb18b3f8b8b8f" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
+                    <div class="expander-icon svelte-1p16tfx">
+                        <svg slot="icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85355 0.146447C7.65829 -0.0488155 7.34171 -0.0488155 7.14645 0.146447C6.95118 0.341709 6.95118 0.658291 7.14645 0.853553L8.29603 2.00314C4.80056 2.11088 2 4.97839 2 8.5C2 12.0899 4.91015 15 8.5 15C12.0899 15 15 12.0899 15 8.5C15 8.48656 15 8.47313 14.9999 8.45971C14.9983 8.2001 14.7805 8 14.5209 8H14.4782C14.2093 8 14 8.23107 14 8.5C14 11.5376 11.5376 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.53311 5.34917 3.11491 8.28892 3.00398L7.14645 4.14645C6.95118 4.34171 6.95118 4.65829 7.14645 4.85355C7.34171 5.04882 7.65829 5.04882 7.85355 4.85355L9.85355 2.85355C10.0488 2.65829 10.0488 2.34171 9.85355 2.14645L7.85355 0.146447ZM11.8536 6.14645C12.0488 6.34171 12.0488 6.65829 11.8536 6.85355L8.85355 9.85355C8.65829 10.0488 8.34171 10.0488 8.14645 9.85355L6.64645 8.35355C6.45118 8.15829 6.45118 7.84171 6.64645 7.64645C6.84171 7.45118 7.15829 7.45118 7.35355 7.64645L8.5 8.79289L11.1464 6.14645C11.3417 5.95118 11.6583 5.95118 11.8536 6.14645Z" fill="currentColor">
+    
+                            </path>
+                        </svg>
+                    </div> 
+                    <span class="expander-header-title svelte-1p16tfx">Enable plus</span> 
+                    <input class="toggle-switch svelte-16ydm79" type="checkbox" style="margin-right: 8px">
+                </div>
+            </h> 
+        </div>
+        
+        <div class="expander direction-down svelte-1p16tfx" role="region">
+            <h>
+                <div role="button" id="fds-expander-header-mbdec66fe8dcfb18b3f8b8b8f" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
+                    <div class="expander-icon svelte-1p16tfx">
+                        <svg slot="icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85355 0.146447C7.65829 -0.0488155 7.34171 -0.0488155 7.14645 0.146447C6.95118 0.341709 6.95118 0.658291 7.14645 0.853553L8.29603 2.00314C4.80056 2.11088 2 4.97839 2 8.5C2 12.0899 4.91015 15 8.5 15C12.0899 15 15 12.0899 15 8.5C15 8.48656 15 8.47313 14.9999 8.45971C14.9983 8.2001 14.7805 8 14.5209 8H14.4782C14.2093 8 14 8.23107 14 8.5C14 11.5376 11.5376 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.53311 5.34917 3.11491 8.28892 3.00398L7.14645 4.14645C6.95118 4.34171 6.95118 4.65829 7.14645 4.85355C7.34171 5.04882 7.65829 5.04882 7.85355 4.85355L9.85355 2.85355C10.0488 2.65829 10.0488 2.34171 9.85355 2.14645L7.85355 0.146447ZM11.8536 6.14645C12.0488 6.34171 12.0488 6.65829 11.8536 6.85355L8.85355 9.85355C8.65829 10.0488 8.34171 10.0488 8.14645 9.85355L6.64645 8.35355C6.45118 8.15829 6.45118 7.84171 6.64645 7.64645C6.84171 7.45118 7.15829 7.45118 7.35355 7.64645L8.5 8.79289L11.1464 6.14645C11.3417 5.95118 11.6583 5.95118 11.8536 6.14645Z" fill="currentColor">
+    
+                            </path>
+                        </svg>
+                    </div> 
+                    <span class="expander-header-title svelte-1p16tfx">Show console</span> 
+                    <input class="toggle-switch svelte-16ydm79" type="checkbox" style="margin-right: 8px">
+                </div>
+            </h> 
+        </div>
+    
+    </div>
+
+</div>
