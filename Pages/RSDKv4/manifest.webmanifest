@@ -1,0 +1,16 @@
+{
+  "name": "RSDKv4",
+  "short_name": "RSDKv4",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme-color": "#000000",
+  "display_override": ["window-controls-overlay"],
+  "icons": [
+    {
+      "src": "/Assets/Library.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
