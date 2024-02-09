@@ -369,7 +369,7 @@ function FilesApp_ChangeDirectory(newDirPath) {
 
         const entryPath = dirPath + '/' + entry;
         const isDirectory = FS.isDir(FS.lookupPath(entryPath).node.mode);
-        const svgPath = isDirectory ? '/Assets/FluentIcons/Directory.svg' : '/Assets/FluentIcons/Document.svg';
+        const svgPath = isDirectory ? '/Test/Assets/FluentIcons/Directory.svg' : '/Test/Assets/FluentIcons/Document.svg';
 
         listItem.innerHTML =
             `<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
