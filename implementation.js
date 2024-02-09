@@ -47,9 +47,7 @@ function themeWindow(bgColor) {
 
 // Loads a page into the content column
 function loadPage(url) {
-    fetch(url).then(response => response.text()).then(data => {
-        contentColumn.innerHTML = data;
-    });
+
 }
 
 // The most functional function of all time
