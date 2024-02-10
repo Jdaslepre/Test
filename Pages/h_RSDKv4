@@ -1,14 +1,14 @@
 <div style="position: relative;">
 
     <!-- Header image-->
-    <img src="/Assets/v4Header.png" style="width: 100%; display: block;">
+    <img src="/Test/Assets/v4Header.png" style="width: 100%; display: block;">
 
     <!-- Main page content -->    
     <div style="position: absolute; top: 264px; left: 56px; right: 56px;">
 
         <!-- Engine header -->
         <div style="display: flex; height: 74px; gap: 24px; align-items: center;">
-            <img src="/Assets/RSDKv4.png" width="64" height="64" />
+            <img src="/Test/Assets/RSDKv4.png" width="64" height="64" />
             <span class="text-block type-title-large svelte-zxj483" style="color: var(--fds-text-primary);">Retro Engine v4</span> 
         </div>
 
@@ -23,10 +23,10 @@
                     <h>
                         <div role="button" id="playCard" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
                             <div class="expander-icon svelte-1p16tfx">
-                                <img src="Assets/FluentIcons/Play.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
+                                <img src="/Test/Assets/FluentIcons/Play.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
                             </div> 
                             <span class="expander-header-title svelte-1p16tfx">Play</span> 
-                            <img src="Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
+                            <img src="/Test/Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
                         </div>
                     </h> 
                 </div>
@@ -36,10 +36,10 @@
                     <h>
                         <div role="button" id="playCard" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
                             <div class="expander-icon svelte-1p16tfx">
-                                <img src="Assets/FluentIcons/Files.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
+                                <img src="/Test/Assets/FluentIcons/Files.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
                             </div> 
                             <span class="expander-header-title svelte-1p16tfx">View filesystem</span> 
-                            <img src="Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
+                            <img src="/Test/Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
                         </div>
                     </h> 
                 </div>
@@ -51,10 +51,10 @@
                 <h>
                     <div role="button" id="playCard" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
                         <div class="expander-icon svelte-1p16tfx">
-                            <img src="Assets/FluentIcons/Directory.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
+                            <img src="/Test/Assets/FluentIcons/Directory.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
                         </div> 
                         <span class="expander-header-title svelte-1p16tfx">Data directory</span> 
-                        <img src="Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
+                        <img src="/Test/Assets/FluentIcons/Foward.svg" width="16px" style="margin-left: auto; margin-right: 8px; width: 12px;height: 12px; opacity: 0.7;">
                     </div>
                 </h> 
             </div>
@@ -64,7 +64,7 @@
                 <h>
                     <div role="button" aria-controls="fds-expander-content-q8b86881038ddf18d903ec06b" class="expander-header svelte-1p16tfx" aria-expanded="true" tabindex="0"> 
                         <div class="expander-icon svelte-1p16tfx">
-                            <img src="Assets/FluentIcons/Settings.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
+                            <img src="/Test/Assets/FluentIcons/Settings.svg" width="16px" style="margin-left: auto; width: 16px;height: 16px;">
                         </div> 
                         <span class="expander-header-title svelte-1p16tfx">Custom Settings</span> 
 
