@@ -19,7 +19,7 @@
             <div style="display: flex; gap: 4px;">
 
                 <!-- Play -->
-                <div class="expander direction-down svelte-1p16tfx" role="region" onclick="OpenTab('/Pages/RSDKv4/')">
+                <div class="expander direction-down svelte-1p16tfx" role="region" onclick="OpenTab('/Test/Pages/RSDKv4/')">
                     <h>
                         <div role="button" id="playCard" aria-controls="fds-expander-content-lb22062fcbdb6918b3f8b8b8f" class="expander-header svelte-1p16tfx" aria-expanded="false" tabindex="0" style="height: 50px;">
                             <div class="expander-icon svelte-1p16tfx">
