@@ -44,48 +44,43 @@ listItems.forEach(item => {
 function themeWindow(bgColor) {
     document.querySelector("meta[name=theme-color]").setAttribute('content', bgColor);
   }
+  
 
 // Loads a page into the content column
 function loadPage(url) {
+    // contentRoot.style.transition = 'opacity 0.025s ease';
+    contentRoot.style.transition = 'opacity 0.10s ease';
+    contentRoot.style.opacity = '0';
+ 
+    setTimeout(() => {
+        contentRoot.style.marginTop = "20%";
 
+        fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            contentRoot.innerHTML = data;
+            
+
+            setTimeout(() => {
+                contentRoot.style.transition = 'opacity 0.40s ease, margin 0.297s cubic-bezier(0, 1, 0, 1)';
+                contentRoot.style.opacity = '1';
+                contentRoot.style.marginTop = "0";
+            }, 50);
+        });
+    }, 100); 
 }
+
 
 // The most functional function of all time
 function OpenTab(url) {
     window.open(url, '_blank');
 }
 
-// the experimenting
 
-function landleLaunch(id) {
-    var element = document.getElementById(`${id}-image`);
-    var txtElement = document.getElementById(`${id}-text`);
-
-    var transition = 'cubic-bezier(1, 0, 0, .90)';
-
-    element.style.transition = `width 0.600s cubic-bezier(0.68, -1, 0, 2), transform 0.167s cubic-bezier(0, 1, 0, 1)`
-    txtElement.style.transition = 'opacity 0.083s linear'
-    txtElement.style.opacity = 0;
-
-    // Get the current position of the element
-    var rect = element.getBoundingClientRect();
-    var currentX = rect.left;
-    var currentY = rect.top;
-
-    // Calculate the offset needed to move the element to the center of the document
-    var offsetX = window.innerWidth / 2 - currentX - rect.width / 2;
-    var offsetY = window.innerHeight / 2 - currentY - rect.height / 2;
-
-    // Apply the new position using the CSS transform property
-    element.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
-    element.style.width = '84px';
-    element.style.height = 'auto';
+function toggleExpanded(id) {
+    var expander = document.getElementById(id);
+    expander.classList.toggle('expanded');
 }
-
-
-
-
-
 
 // Well?
 function createDialog(title, message, confirmLabel, closeLabel, confirmActionFunc, closeActionFunc) {

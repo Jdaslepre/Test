@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="theme-color">
   <title>RSDK-Library</title>
-  <link href=/manifest.webmanifest rel=manifest>
-  <link rel="icon" href="Assets/RSDK-Library.svg" type="image/x-icon">
+  <link href=manifest.webmanifest rel=manifest>
+  <link rel="icon" href="/Test/Assets/RSDK-Library.svg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="Styles/FluentSvelteDefs.css">
   <link rel="stylesheet" type="text/css" href="Styles/FluentSvelteControls.css">
   <link rel="stylesheet" type="text/css" href="Styles/RSDKLibrary.css">
@@ -40,9 +40,6 @@
       flex: 1;
       border-left: 1px solid var(--fds-surface-stroke-flyout);
       background-color: var(--fds-layer-background-default);
-      padding-top: 22px;
-      padding-left: 30px;
-      padding-right: 30px;
     }
   </style>
 
@@ -60,7 +57,7 @@
 
       <div class="TitleBar" style="display:flex; position: absolute; width: 100%; -webkit-app-region: drag;">
 
-        <img src="/Assets/RSDK-Library.svg" style="inline-size: 16px;" />
+        <img src="/Test/Assets/RSDK-Library.svg" style="inline-size: 16px;" />
         <span class="text-block type-caption svelte-zxj483" style="color: var(--fds-text-primary)">RSDK-Library
           Launcher</span>
 
@@ -69,7 +66,7 @@
       <!-- Make room for the titlebar since its position is absolute -->
       <div style="height: 32px;"></div>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item selected svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/Home" tabindex="0" aria-selected="false" class="list-item selected svelte-1ye4o7x" role="listitem"
         type="navigation">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -83,31 +80,31 @@
         <div class="seperator_h"></div>
       </div>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/h_RSDKv2" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation">
         <img src="Assets/RSDKGeneric.png" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">RSDKv2</span>
       </a>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation">
         <img src="Assets/RSDKv3.png" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">RSDKv3</span>
       </a>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/h_RSDKv4" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation">
         <img src="Assets/RSDKv4.png" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">RSDKv4</span>
       </a>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation">
         <img src="Assets/RSDKv5.png" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">RSDKv5</span>
       </a>
 
-      <a id="Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/Home" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation">
         <img src="Assets/RSDKv5U.png" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">RSDKv5U</span>
@@ -117,7 +114,7 @@
         <div class="seperator_h"></div>
       </div>
 
-      <a href="Pages/Files/Files.html" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x"
+      <a href="/Test/Pages/Files/Files.html" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x"
         role="listitem" type="navigation">
         <img src="Assets/FluentIcons/Files.svg" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">File Explorer</span>
@@ -125,7 +122,7 @@
           style="margin-left: auto; width: 12px;height: 12px; opacity: 0.7;">
       </a>
 
-      <a id="Pages/Settings" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
+      <a id="/Test/Pages/Settings" tabindex="0" aria-selected="false" class="list-item svelte-1ye4o7x" role="listitem"
         type="navigation" style="margin-top: auto; margin-bottom: 6px;">
         <img src="Assets/FluentIcons/Settings.svg" width="16px" style="margin-right: 16px;"></img>
         <span class="text-block type-body svelte-zxj483">Settings</span>
@@ -134,7 +131,9 @@
     </div>
 
     <div id="contentColumn" class="contentColumn">
+      <div id="contentRoot">
 
+      </div>
     </div>
 
   </div>
